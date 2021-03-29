@@ -77,7 +77,17 @@ clr <- colorRampPalette(c("dark red","red","pink")) (100)
 plot(p224r63_2011$B3_sre, col=clr)
 clnir <- colorRampPalette(c("red","orange","yellow")) (100)
 plot(p224r63_2011$B4_sre, col=clnir)
- dev.off()
+
 
 ## DAY 4
 
+# visualising data by RGB plotting
+
+# Bands of Landsat
+# B1: blue
+# B2: green
+# B3: red
+# B4: near infrared
+# B5: middle infrared
+# B6: thermal infrared
+# B7: middle infrared
