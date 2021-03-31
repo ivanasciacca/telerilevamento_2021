@@ -126,3 +126,37 @@ plotRGB(p224r63_2011, r=3, g=4, b=2, stretch="hist")
 #  install.packages("RStoolbox")
 install.packages("RStoolbox")
 library(RStoolbox)
+
+
+## DAY 5
+
+# Multitemporal set
+p224r63_1988 <- brick("p224r63_1988_masked.grd")
+p224r63_1988
+plot(p224r63_1988)
+
+# Bands of Landsat
+# B1: blue
+# B2: green
+# B3: red
+# B4: near infrared
+# B5: middle infrared
+# B6: thermal infrared
+# B7: middle infrared
+
+plotRGB(p224r63_1988, r=3, g=2, b=1, stretch="Lin")
+plotRGB(p224r63_1988, r=4, g=3, b=2, stretch="Lin")
+
+#
+par(mfrow=c(2,1))
+plotRGB(p224r63_1988, r=4, g=3, b=2, stretch="Lin")
+plotRGB(p224r63_2011, r=4, g=3, b=2, stretch="Lin")
+
+#
+pdf("multitemp.pdf")
+par(mfrow=c(2,2))
+plotRGB(p224r63_1988, r=4, g=3, b=2, stretch="Lin")
+plotRGB(p224r63_2011, r=4, g=3, b=2, stretch="Lin")
+plotRGB(p224r63_1988, r=4, g=3, b=2, stretch="hist")
+plotRGB(p224r63_2011, r=4, g=3, b=2, stretch="hist")
+dev.off()
